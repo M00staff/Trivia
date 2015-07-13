@@ -16,14 +16,31 @@ var questions = [
 	}
 ];
 
+$('#resetButton').on('click' , function(){
+	points = 0;
+	alert('score reset you are now at '+points)
+	$('.question').html(points);
+});
+
 $('#begin').on('click' , function(){
-	for (var i = 0 ; i < 3 ; i++) {
- 		//$('.question').text(questions[i].question);
+	for (var i = 0 ; i < questions.length ; i++) {
+ 		// -------------------------------------trying to use innerHTML on the p tag 
+ 		// $('p').text(questions[i].question);
+ 		// $('submitButton').on('click' , function(){
+ 		// 	if ($('input').val() === questions[i].answer){
+ 		// 		alert('this works');
+ 		// 	} 
+ 		// })
 		var answerDizzle = prompt(questions[i].question+'?')
 			if (answerDizzle === questions[i].answer) {
 				points++;
+				alert('wow you are so smart, currently you have a score of '+points);
+				$('.question').html(points);							
+			}
+			else {
+				points -= 1;
+				alert('WRONG!! you have a score of '+points);
 				$('.question').html(points);
-				console.log(points);
 			}
 	}
 
