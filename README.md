@@ -1,4 +1,4 @@
-# Trivia
+# Trivia.  
 User Stories
 As a user i would like to be able to submit answers using a text box and button.  
 As a user i would like to be able to keep track of how many questions i answered right and wrong.  
